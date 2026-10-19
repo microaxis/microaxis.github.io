@@ -10,8 +10,72 @@ nav{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0 24px;font-size:15px}
 .box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0}
 .lang{border-top:1px solid var(--line);margin-top:40px;padding-top:8px}
 footer{margin-top:48px;font-size:14px;color:var(--muted)}
+
+.gal-ovl{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.gal-ovl button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.gal-ovl button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.gal-ovl .sep{flex:1}
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.gal.tel{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.gal figure{margin:0;cursor:zoom-in}
+.gal img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:var(--soft)}
+.gal figcaption{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+.lb{position:fixed;inset:0;background:rgba(5,10,20,.92);display:none;align-items:center;justify-content:center;z-index:10;padding:48px 56px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.lb p{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:#e2e8f0;margin:0;font-size:15px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:22px;cursor:pointer}
+.lb .x{top:10px;right:10px}.lb .pr{left:8px;top:50%;transform:translateY(-50%)}.lb .dl{right:8px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.lb{padding:52px 8px 40px}.lb .pr,.lb .dl{top:auto;bottom:6px;transform:none}}
+main{max-width:1000px}
 </style></head><body><main><header><img src="logo.png" alt=""><div><h1>MicroAxis</h1><div class="muted">Dílenské výpočty pro CNC obrábění · Shop-floor calculations for CNC machining</div></div></header><nav><a href="index.html">MicroAxis</a><a href="privacy.html">Ochrana osobních údajů · Privacy</a><a href="terms.html">Podmínky · Terms</a></nav>
 <p>MicroAxis je offline kalkulačka a příručka pro obrábění: řezné podmínky a výkon na vřetenu, tolerance ISO 286, závity, drsnost, tvrdost, materiály, kalkulace ceny, knihovna nástrojů a dokumentů. Funguje bez internetu na Androidu i ve Windows.</p>
 <p>MicroAxis is an offline calculator and handbook for machining: cutting data and spindle power, ISO 286 tolerances, threads, roughness, hardness, materials, price quotes, tool and document libraries. It works without internet on Android and Windows.</p>
+
+<h2 id="galerie">Ukázky · Screenshots</h2>
+<div class="gal-ovl" role="group">
+  <button type="button" data-zar="pc" class="on">Počítač · PC</button><button type="button" data-zar="tel">Telefon · Phone</button>
+  <span class="sep"></span>
+  <button type="button" data-jaz="cs" class="on">Čeština</button><button type="button" data-jaz="en">English</button>
+</div>
+<div class="gal" id="gal"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Ukázka"><img alt=""><p></p>
+  <button type="button" class="x" aria-label="Zavřít">×</button><button type="button" class="pr" aria-label="Předchozí">‹</button><button type="button" class="dl" aria-label="Další">›</button></div>
+<script>
+(()=>{
+const P={pc:[['power','Výkon, moment a síly na vřetenu, průběh síly za otáčku','Spindle power, torque and forces, force trace per revolution'],
+  ['fit','ISO 286: uložení, úchylky a vůle','ISO 286 fits, deviations and clearance'],
+  ['krit','Kritická hloubka řezu a stabilní kapsy','Critical depth of cut and stability lobes'],
+  ['bcd','Rozteč otvorů a polygon','Bolt circle and polygon'],
+  ['mat','Databáze materiálů (ČSN, EN, kc1.1)','Material database (EN, ČSN, kc1.1)'],
+  ['kal','Kalkulace ceny dílu','Part price quote'],
+  ['pruhyb','Průhyb nástroje','Tool deflection'],
+  ['home','Plocha s nástroji a dokumenty','Home with tools and documents']],
+ tel:[['power','Výkon a síly','Power and forces'],['fit','ISO 286 uložení','ISO 286 fits'],['zav','Závity a předvrtání','Threads and tap drills'],['home','Plocha','Home']]};
+let zar='pc', jaz=(navigator.language||'').toLowerCase().startsWith('cs')?'cs':'en', i=0;
+const g=document.getElementById('gal'), lb=document.getElementById('lb'), lbi=lb.querySelector('img'), lbp=lb.querySelector('p');
+const src=(v)=>`img/${zar}-${v}-${jaz}.webp`, pop=x=>jaz==='cs'?x[1]:x[2];
+function kresli(){
+  document.querySelectorAll('[data-zar]').forEach(b=>b.classList.toggle('on',b.dataset.zar===zar));
+  document.querySelectorAll('[data-jaz]').forEach(b=>b.classList.toggle('on',b.dataset.jaz===jaz));
+  g.className='gal'+(zar==='tel'?' tel':'');
+  g.innerHTML=P[zar].map((x,k)=>`<figure data-i="${k}"><img src="${src(x[0])}" alt="${pop(x)}" loading="lazy" width="${zar==='pc'?1440:780}" height="${zar==='pc'?900:1688}"><figcaption>${pop(x)}</figcaption></figure>`).join('');
+}
+function ukaz(k){ const L=P[zar]; i=(k+L.length)%L.length; lbi.src=src(L[i][0]); lbi.alt=pop(L[i]); lbp.textContent=pop(L[i]); lb.classList.add('on'); }
+function zavri(){ lb.classList.remove('on'); }
+document.addEventListener('click',e=>{
+  const z=e.target.closest('[data-zar]'); if(z){ zar=z.dataset.zar; kresli(); return; }
+  const j=e.target.closest('[data-jaz]'); if(j){ jaz=j.dataset.jaz; kresli(); return; }
+  const f=e.target.closest('#gal figure'); if(f){ ukaz(+f.dataset.i); return; }
+  if(e.target.closest('.lb .x')||e.target===lb) zavri();
+  if(e.target.closest('.lb .pr')) ukaz(i-1);
+  if(e.target.closest('.lb .dl')) ukaz(i+1);
+});
+addEventListener('keydown',e=>{ if(!lb.classList.contains('on')) return; if(e.key==='Escape') zavri(); if(e.key==='ArrowLeft') ukaz(i-1); if(e.key==='ArrowRight') ukaz(i+1); });
+let tx=null; lb.addEventListener('touchstart',e=>{ tx=e.touches[0].clientX; },{passive:true});
+lb.addEventListener('touchend',e=>{ if(tx==null) return; const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) ukaz(i+(d<0?1:-1)); tx=null; });
+kresli();
+})();
+</script>
 <div class="box"><b>Stáhnout · Download</b><br><a href="https://play.google.com/store/apps/details?id=cz.jirisloboda.microaxis">Google Play (Android)</a> · <a href="https://apps.microsoft.com/detail/9NHB3R9JZXDP">Microsoft Store (Windows)</a></div>
 <footer>MicroAxis · Jiří Sloboda · <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></footer></main></body></html>
