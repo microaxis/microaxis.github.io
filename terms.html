@@ -1,23 +1,136 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MicroAxis · Podmínky použití</title><link rel="icon" href="logo.png"><style>
-:root{--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--acc:#2563eb;--bg:#fff;--soft:#f8fafc}
-@media (prefers-color-scheme:dark){:root{--ink:#e2e8f0;--muted:#94a3b8;--line:#1e293b;--acc:#60a5fa;--bg:#0b1220;--soft:#111a2b}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:40px 20px 60px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:8px}header img{width:56px;height:56px;border-radius:14px}
-h1{font-size:28px;margin:0}h2{font-size:20px;margin:32px 0 8px}h3{font-size:16px;margin:20px 0 4px}
-p,li{color:var(--ink)}.muted{color:var(--muted)}a{color:var(--acc)}
-nav{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0 24px;font-size:15px}
-.box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0}
-.lang{border-top:1px solid var(--line);margin-top:40px;padding-top:8px}
-footer{margin-top:48px;font-size:14px;color:var(--muted)}
-</style></head><body><main><header><img src="logo.png" alt=""><h1>Podmínky použití</h1></header><nav><a href="index.html">MicroAxis</a><a href="index.html#pathcheck">PathCheck</a><a href="privacy.html">Ochrana osobních údajů · Privacy</a><a href="terms.html">Podmínky · Terms</a></nav>
-<p>MicroAxis poskytuje výpočty a údaje jako pomůcku pro technickou praxi. Výsledky jsou orientační; za volbu řezných podmínek, nástrojů, upínání a za kontrolu výsledků odpovídá uživatel. Autor neodpovídá za škody na strojích, nástrojích, obrobcích ani za zmetky vzniklé použitím aplikace.</p>
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MicroAxis · Podmínky použití · Terms of Use</title>
+<meta name="description" content="Podmínky použití aplikace MicroAxis · MicroAxis Terms of Use">
+<link rel="icon" href="logo.png">
+<style>
+:root{--ink:#0F172A;--muted:#475569;--line:#E2E8F0;--acc:#2563EB;--soft:#F8FAFC;--bg:#fff}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--acc)}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+html[lang=cs] [lang=en], html[lang=en] [lang=cs]{display:none!important}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .w{display:flex;align-items:center;gap:20px;height:64px}
+.top .logo img{height:30px;display:block}
+.top nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500}
+.top nav a:hover{color:var(--acc)}
+.jaz{display:flex;border:1px solid var(--line);border-radius:999px;padding:2px}
+.jaz button{font:inherit;font-size:13px;font-weight:600;border:0;background:none;color:var(--muted);padding:4px 10px;border-radius:999px;cursor:pointer}
+.jaz button.on{background:var(--acc);color:#fff}
+.hl{background:linear-gradient(180deg,#EFF6FF 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.hl .w{max-width:840px;padding-top:52px;padding-bottom:30px}
+.kick{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+h1{font-size:42px;line-height:1.08;letter-spacing:-.025em;margin:0 0 12px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs a{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.tabs a.on{background:var(--acc);border-color:var(--acc);color:#fff}
+main .w{max-width:840px;padding-top:36px;padding-bottom:72px}
+.shrn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 36px}
+.shrn div{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px}
+.shrn i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#DBEAFE;color:var(--acc);margin-bottom:10px}
+.shrn i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.shrn b{display:block;font-size:15.5px;margin-bottom:2px}
+.shrn span{display:block;font-size:14px;color:var(--muted);line-height:1.5}
+h2{font-size:24px;line-height:1.2;letter-spacing:-.01em;margin:40px 0 10px;padding-top:4px}
+h2:first-of-type{margin-top:0}
+p,li{margin:0 0 12px}
+ul{padding-left:22px;margin:0 0 12px}
+li::marker{color:var(--acc)}
+.box{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;padding:14px 18px;margin:16px 0}
+.box p:last-child{margin:0}
+code,kbd{font:13.5px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.cesta{font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:14px;color:var(--muted)}
+footer .w{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+footer img{height:22px}
+@media (max-width:760px){
+  .top nav{display:none} .jaz{margin-left:auto}
+  h1{font-size:32px} .hl .w{padding-top:36px}
+  .shrn{grid-template-columns:1fr}
+  h2{font-size:21px}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="w">
+  <a class="logo" href="index.html"><img src="microaxis-napis.svg" alt="MicroAxis"></a>
+  <nav>
+    <a href="index.html#funkce"><span lang="cs">Funkce</span><span lang="en">Features</span></a>
+    <a href="index.html#pathcheck">PathCheck</a>
+    <a href="index.html#ukazky"><span lang="cs">Ukázky</span><span lang="en">Screenshots</span></a>
+    <a href="index.html#stahnout"><span lang="cs">Stáhnout</span><span lang="en">Download</span></a>
+  </nav>
+  <div class="jaz" role="group" aria-label="Jazyk · Language"><button type="button" data-l="cs">CZ</button><button type="button" data-l="en">EN</button></div>
+</div></div>
+<header class="hl"><div class="w">
+  <p class="kick"><span lang="cs">Právní informace</span><span lang="en">Legal</span></p>
+  <h1><span lang="cs">Podmínky použití</span><span lang="en">Terms of Use</span></h1>
+  <p class="meta"><span lang="cs">Platné od 28. 10. 2026 · MicroAxis pro Android a Windows</span><span lang="en">Effective 28 October 2026 · MicroAxis for Android and Windows</span></p>
+  <div class="tabs"><a href="privacy.html"><span lang="cs">Ochrana osobních údajů</span><span lang="en">Privacy Policy</span></a><a href="terms.html" class="on"><span lang="cs">Podmínky použití</span><span lang="en">Terms of Use</span></a></div>
+</div></header>
+<main><div class="w">
+<div lang="cs">
+<div class="shrn">
+<div><i><svg viewBox="0 0 24 24"><path d="M14 3l7 7-11 11H3v-7z"/><path d="M12 5l7 7"/></svg></i><b>Pomůcka pro praxi</b><span>Výsledky jsou orientační, rozhoduje a kontroluje uživatel.</span></div>
+<div><i><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M3 4h2l2.5 11h11L21 7H7"/></svg></i><b>Pro jednorázově</b><span>Nákup přes Google Play nebo Microsoft Store, bez předplatného.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Vaše data</b><span>Zpracování osobních údajů popisují zásady ochrany údajů.</span></div>
+</div>
+<h2>Použití výsledků</h2>
+<p>MicroAxis poskytuje výpočty a údaje jako pomůcku pro technickou praxi. Výsledky jsou orientační; za volbu řezných podmínek, nástrojů, upínání a za kontrolu výsledků odpovídá uživatel.</p>
+<h2>PathCheck</h2>
+<p>PathCheck je simulace podle NC programu a zadaných nástrojů. Nenahrazuje kontrolu programu na stroji, zkušební běh ani kontrolu kinematiky a upnutí. Program, který PathCheck neoznačí, nemusí být bez chyb.</p>
+<div class="box"><p>Autor neodpovídá za škody na strojích, nástrojích, obrobcích ani za zmetky vzniklé použitím aplikace.</p></div>
+<h2>Údaje výrobců</h2>
 <p>Údaje výrobců (katalogy nástrojů, povlaky, řezné podmínky) pocházejí z veřejných podkladů těchto firem; ochranné známky patří jejich vlastníkům a autor s nimi nemá smluvní vztah.</p>
+<h2>MicroAxis Pro</h2>
 <p>MicroAxis Pro je jednorázový nákup přes Google Play nebo Microsoft Store a řídí se podmínkami příslušného obchodu.</p>
+<h2>Osobní údaje</h2>
 <p>Zpracování osobních údajů popisují <a href="privacy.html">Zásady ochrany osobních údajů</a>.</p>
-<section class="lang" lang="en"><h1>Terms of Use</h1>
-<p>MicroAxis provides calculations and data as an aid for engineering practice. Results are indicative; the user is responsible for choosing cutting data, tools and workholding and for checking results. The developer is not liable for damage to machines, tools or workpieces or for scrapped parts resulting from use of the app.</p>
+<h2>Kontakt</h2>
+<p>Jiří Sloboda, <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a>.</p>
+</div>
+<div lang="en">
+<div class="shrn">
+<div><i><svg viewBox="0 0 24 24"><path d="M14 3l7 7-11 11H3v-7z"/><path d="M12 5l7 7"/></svg></i><b>An aid for practice</b><span>Results are indicative; the user decides and checks.</span></div>
+<div><i><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M3 4h2l2.5 11h11L21 7H7"/></svg></i><b>Pro as a one-time purchase</b><span>Through Google Play or the Microsoft Store, no subscription.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Your data</b><span>Personal data processing is described in the Privacy Policy.</span></div>
+</div>
+<h2>Use of results</h2>
+<p>MicroAxis provides calculations and data as an aid for engineering practice. Results are indicative; the user is responsible for choosing cutting data, tools and workholding and for checking results.</p>
+<h2>PathCheck</h2>
+<p>PathCheck is a simulation based on the NC program and the tools entered. It does not replace checking the program on the machine, a dry run or checking kinematics and fixturing. A program that PathCheck does not flag is not guaranteed to be error-free.</p>
+<div class="box"><p>The developer is not liable for damage to machines, tools or workpieces or for scrapped parts resulting from use of the app.</p></div>
+<h2>Manufacturer data</h2>
 <p>Manufacturer data (tool catalogs, coatings, cutting data) comes from these companies' public materials; trademarks belong to their owners and the developer has no contractual relationship with them.</p>
+<h2>MicroAxis Pro</h2>
 <p>MicroAxis Pro is a one-time purchase through Google Play or the Microsoft Store and is governed by that store's terms.</p>
-<p>Personal data processing is described in the <a href="privacy.html">Privacy Policy</a>.</p></section>
-<footer>MicroAxis · Jiří Sloboda · <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></footer></main></body></html>
+<h2>Personal data</h2>
+<p>Personal data processing is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+<h2>Contact</h2>
+<p>Jiří Sloboda, <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a>.</p>
+</div>
+</div></main>
+<footer><div class="w">
+  <img src="microaxis-napis.svg" alt="MicroAxis">
+  <span>Jiří Sloboda · <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></span>
+  <a href="index.html">microaxis.github.io</a>
+  <a href="privacy.html"><span lang="cs">Ochrana osobních údajů</span><span lang="en">Privacy</span></a>
+  <a href="terms.html"><span lang="cs">Podmínky</span><span lang="en">Terms</span></a>
+</div></footer>
+<script>
+(()=>{ const H=document.documentElement;
+let jaz='cs'; try{ jaz=localStorage.getItem('jaz')||((navigator.language||'').toLowerCase().match(/^(cs|sk)/)?'cs':'en'); }catch(e){}
+function nastav(l){ H.lang=l; document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l)); try{ localStorage.setItem('jaz',l); }catch(e){} }
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-l]'); if(b) nastav(b.dataset.l); });
+const q=new URLSearchParams(location.search).get('lang'); nastav(q==='en'||q==='cs'?q:jaz);
+})();
+</script>
+</body>
+</html>

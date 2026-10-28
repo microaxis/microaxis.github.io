@@ -1,44 +1,142 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MicroAxis · Ochrana osobních údajů</title><link rel="icon" href="logo.png"><style>
-:root{--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--acc:#2563eb;--bg:#fff;--soft:#f8fafc}
-@media (prefers-color-scheme:dark){:root{--ink:#e2e8f0;--muted:#94a3b8;--line:#1e293b;--acc:#60a5fa;--bg:#0b1220;--soft:#111a2b}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:40px 20px 60px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:8px}header img{width:56px;height:56px;border-radius:14px}
-h1{font-size:28px;margin:0}h2{font-size:20px;margin:32px 0 8px}h3{font-size:16px;margin:20px 0 4px}
-p,li{color:var(--ink)}.muted{color:var(--muted)}a{color:var(--acc)}
-nav{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0 24px;font-size:15px}
-.box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0}
-.lang{border-top:1px solid var(--line);margin-top:40px;padding-top:8px}
-footer{margin-top:48px;font-size:14px;color:var(--muted)}
-</style></head><body><main><header><img src="logo.png" alt=""><h1>Zásady ochrany osobních údajů</h1></header><nav><a href="index.html">MicroAxis</a><a href="index.html#pathcheck">PathCheck</a><a href="privacy.html">Ochrana osobních údajů · Privacy</a><a href="terms.html">Podmínky · Terms</a></nav>
-<p class="muted">Platné od 19. 10. 2026 · aplikace MicroAxis pro Android a Windows · správce: Jiří Sloboda, <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></p>
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MicroAxis · Ochrana osobních údajů · Privacy Policy</title>
+<meta name="description" content="Zásady ochrany osobních údajů aplikace MicroAxis · MicroAxis Privacy Policy">
+<link rel="icon" href="logo.png">
+<style>
+:root{--ink:#0F172A;--muted:#475569;--line:#E2E8F0;--acc:#2563EB;--soft:#F8FAFC;--bg:#fff}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--acc)}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+html[lang=cs] [lang=en], html[lang=en] [lang=cs]{display:none!important}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .w{display:flex;align-items:center;gap:20px;height:64px}
+.top .logo img{height:30px;display:block}
+.top nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500}
+.top nav a:hover{color:var(--acc)}
+.jaz{display:flex;border:1px solid var(--line);border-radius:999px;padding:2px}
+.jaz button{font:inherit;font-size:13px;font-weight:600;border:0;background:none;color:var(--muted);padding:4px 10px;border-radius:999px;cursor:pointer}
+.jaz button.on{background:var(--acc);color:#fff}
+.hl{background:linear-gradient(180deg,#EFF6FF 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.hl .w{max-width:840px;padding-top:52px;padding-bottom:30px}
+.kick{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+h1{font-size:42px;line-height:1.08;letter-spacing:-.025em;margin:0 0 12px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs a{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.tabs a.on{background:var(--acc);border-color:var(--acc);color:#fff}
+main .w{max-width:840px;padding-top:36px;padding-bottom:72px}
+.shrn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 36px}
+.shrn div{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px}
+.shrn i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#DBEAFE;color:var(--acc);margin-bottom:10px}
+.shrn i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.shrn b{display:block;font-size:15.5px;margin-bottom:2px}
+.shrn span{display:block;font-size:14px;color:var(--muted);line-height:1.5}
+h2{font-size:24px;line-height:1.2;letter-spacing:-.01em;margin:40px 0 10px;padding-top:4px}
+h2:first-of-type{margin-top:0}
+p,li{margin:0 0 12px}
+ul{padding-left:22px;margin:0 0 12px}
+li::marker{color:var(--acc)}
+.box{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;padding:14px 18px;margin:16px 0}
+.box p:last-child{margin:0}
+code,kbd{font:13.5px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.cesta{font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:14px;color:var(--muted)}
+footer .w{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+footer img{height:22px}
+@media (max-width:760px){
+  .top nav{display:none} .jaz{margin-left:auto}
+  h1{font-size:32px} .hl .w{padding-top:36px}
+  .shrn{grid-template-columns:1fr}
+  h2{font-size:21px}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="w">
+  <a class="logo" href="index.html"><img src="microaxis-napis.svg" alt="MicroAxis"></a>
+  <nav>
+    <a href="index.html#funkce"><span lang="cs">Funkce</span><span lang="en">Features</span></a>
+    <a href="index.html#pathcheck">PathCheck</a>
+    <a href="index.html#ukazky"><span lang="cs">Ukázky</span><span lang="en">Screenshots</span></a>
+    <a href="index.html#stahnout"><span lang="cs">Stáhnout</span><span lang="en">Download</span></a>
+  </nav>
+  <div class="jaz" role="group" aria-label="Jazyk · Language"><button type="button" data-l="cs">CZ</button><button type="button" data-l="en">EN</button></div>
+</div></div>
+<header class="hl"><div class="w">
+  <p class="kick"><span lang="cs">Právní informace</span><span lang="en">Legal</span></p>
+  <h1><span lang="cs">Ochrana osobních údajů</span><span lang="en">Privacy Policy</span></h1>
+  <p class="meta"><span lang="cs">Platné od 28. 10. 2026 · MicroAxis pro Android a Windows</span><span lang="en">Effective 28 October 2026 · MicroAxis for Android and Windows</span></p>
+  <div class="tabs"><a href="privacy.html" class="on"><span lang="cs">Ochrana osobních údajů</span><span lang="en">Privacy Policy</span></a><a href="terms.html"><span lang="cs">Podmínky použití</span><span lang="en">Terms of Use</span></a></div>
+</div></header>
+<main><div class="w">
+<div lang="cs">
+<div class="shrn">
+<div><i><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></i><b>Data zůstávají u vás</b><span>Výpočty, programy i dokumenty jsou ve vašem zařízení nebo ve složce, kterou zvolíte.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Žádné sledování</b><span>Bez reklam, analytiky a sledovacích nástrojů. Autor neprovozuje žádný server.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 2A3 3 0 0 0 7 18z"/></svg></i><b>Záloha jen na přání</b><span>Na Google Disk jen po přihlášení, do skryté složky aplikace ve vašem účtu.</span></div>
+</div>
 <h2>Shrnutí</h2>
-<p>MicroAxis funguje offline. Výpočty, nastavení, kalkulace, zakázky, knihovny i dokumenty zůstávají ve vašem zařízení nebo ve složce, kterou si sami zvolíte. Autor aplikace k vašim datům nemá přístup a neprovozuje žádný server, na který by se odesílala. Aplikace neobsahuje reklamy ani analytické a sledovací nástroje.</p>
+<p>MicroAxis funguje bez připojení k internetu. Výpočty, nastavení, kalkulace, zakázky, knihovny, programy PathCheck i dokumenty zůstávají ve vašem zařízení nebo ve složce, kterou si sami zvolíte. Autor aplikace k vašim datům nemá přístup a neprovozuje žádný server, na který by se odesílala. Aplikace neobsahuje reklamy ani analytické a sledovací nástroje.</p>
 <h2>Přihlášení přes Google a zálohy na Google Disk (volitelné)</h2>
 <p>Pokud se v aplikaci přihlásíte přes Google, aplikace získá od Googlu tyto údaje a oprávnění:</p>
-<ul><li><b>e-mail a jméno účtu Google</b> (userinfo.email, userinfo.profile): jen pro zobrazení, ke kterému účtu jste přihlášeni;</li>
-<li><b>přístup ke skryté složce aplikace na vašem Google Disku</b> (drive.appdata): do ní aplikace ukládá zálohy nastavení, kalkulací, zakázek, poznámek, katalogů a knihoven, a pokud to výslovně zapnete, i vašich dokumentů. Aplikace nevidí žádné jiné soubory na vašem Disku.</li></ul>
+<ul><li><b>e-mail a jméno účtu Google</b> (<code>userinfo.email</code>, <code>userinfo.profile</code>): jen pro zobrazení, ke kterému účtu jste přihlášeni;</li>
+<li><b>přístup ke skryté složce aplikace na vašem Google Disku</b> (<code>drive.appdata</code>): do ní aplikace ukládá zálohy nastavení, kalkulací, zakázek, poznámek, katalogů, knihoven a uložených programů PathCheck, a pokud to výslovně zapnete, i vašich dokumentů. Aplikace nevidí žádné jiné soubory na vašem Disku.</li></ul>
 <p>Zálohy se přenášejí šifrovaně (HTTPS) přímo mezi vaším zařízením a Googlem a jsou uložené ve vašem účtu Google. Autor aplikace k nim nemá přístup. Přihlašovací token je uložený jen ve vašem zařízení (Android: služby Google Play, Windows: Správce přihlašovacích údajů).</p>
-<p>Využití a předávání údajů získaných z Google API se řídí <a href="https://developers.google.com/terms/api-services-user-data-policy">zásadami Google API Services User Data Policy</a>, včetně požadavků na omezené použití (Limited Use). Údaje se nepoužívají k reklamě, neprodávají se a nepředávají se třetím stranám.</p>
+<div class="box"><p>Využití a předávání údajů získaných z Google API se řídí <a href="https://developers.google.com/terms/api-services-user-data-policy">zásadami Google API Services User Data Policy</a>, včetně požadavků na omezené použití (Limited Use). Údaje se nepoužívají k reklamě, neprodávají se a nepředávají se třetím stranám.</p></div>
 <h2>Nákup MicroAxis Pro</h2>
 <p>Platbu zpracovává Google Play nebo Microsoft Store. Aplikace se od obchodu dozví jen to, zda je nákup platný; platební údaje nikdy nevidí.</p>
 <h2>Smazání údajů</h2>
-<ul><li>V aplikaci: Nastavení → O aplikaci → Smazat vše a začít znovu.</li>
-<li>Odhlášení a odebrání přístupu: Nastavení → Účet a Pro → Odhlásit, nebo na <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-<li>Zálohy na Google Disku: drive.google.com → Nastavení → Spravovat aplikace → MicroAxis → Smazat skrytá data aplikace.</li></ul>
-<h2>Kontakt</h2><p>Dotazy k ochraně údajů: <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a>.</p>
-<section class="lang" lang="en"><h1>Privacy Policy</h1>
-<p class="muted">Effective 19 October 2026 · MicroAxis for Android and Windows · controller: Jiří Sloboda, <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></p>
-<h2>Summary</h2><p>MicroAxis works offline. Calculations, settings, quotes, jobs, libraries and documents stay on your device or in a folder you choose. The developer has no access to your data and runs no server it is sent to. The app has no ads and no analytics or tracking tools.</p>
+<ul><li>V aplikaci: <span class="cesta">Nastavení › O aplikaci › Smazat vše a začít znovu</span>.</li>
+<li>Odhlášení a odebrání přístupu: <span class="cesta">Nastavení › Účet a Pro › Odhlásit</span>, nebo na <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+<li>Zálohy na Google Disku: <span class="cesta">drive.google.com › Nastavení › Spravovat aplikace › MicroAxis › Smazat skrytá data aplikace</span>.</li></ul>
+<h2>Kontakt</h2>
+<p>Správce: Jiří Sloboda. Dotazy k ochraně údajů: <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a>.</p>
+</div>
+<div lang="en">
+<div class="shrn">
+<div><i><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></i><b>Your data stays with you</b><span>Calculations, programs and documents stay on your device or in a folder you choose.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>No tracking</b><span>No ads, no analytics, no tracking tools. The developer runs no server.</span></div>
+<div><i><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 2A3 3 0 0 0 7 18z"/></svg></i><b>Backup only if you want it</b><span>To Google Drive only after sign-in, into the app's hidden folder in your account.</span></div>
+</div>
+<h2>Summary</h2>
+<p>MicroAxis works offline. Calculations, settings, quotes, jobs, libraries, PathCheck programs and documents stay on your device or in a folder you choose. The developer has no access to your data and runs no server it is sent to. The app has no ads and no analytics or tracking tools.</p>
 <h2>Sign-in with Google and Google Drive backups (optional)</h2>
 <p>If you sign in with Google, the app receives:</p>
-<ul><li><b>your Google account email and name</b> (userinfo.email, userinfo.profile), only to show which account you are signed in with;</li>
-<li><b>access to the app's hidden folder in your Google Drive</b> (drive.appdata), where the app stores backups of your settings, quotes, jobs, notes, catalogs and libraries, and, only if you turn it on, your documents. The app cannot see any other files in your Drive.</li></ul>
-<p>Backups travel encrypted (HTTPS) directly between your device and Google and are stored in your Google account. The developer has no access to them. The sign-in token is stored only on your device.</p>
-<p>MicroAxis's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. The data is not used for advertising, not sold and not shared with third parties.</p>
-<h2>MicroAxis Pro purchase</h2><p>Payments are processed by Google Play or the Microsoft Store. The app only learns whether the purchase is valid and never sees payment details.</p>
-<h2>Deleting your data</h2><ul><li>In the app: Settings → About → Delete everything and start over.</li>
-<li>Sign out and remove access: Settings → Account and Pro → Sign out, or <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-<li>Backups on Google Drive: drive.google.com → Settings → Manage apps → MicroAxis → Delete hidden app data.</li></ul>
-<h2>Contact</h2><p><a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></p></section>
-<footer>MicroAxis · Jiří Sloboda · <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></footer></main></body></html>
+<ul><li><b>your Google account email and name</b> (<code>userinfo.email</code>, <code>userinfo.profile</code>), only to show which account you are signed in with;</li>
+<li><b>access to the app's hidden folder in your Google Drive</b> (<code>drive.appdata</code>), where the app stores backups of your settings, quotes, jobs, notes, catalogs, libraries and saved PathCheck programs, and, only if you turn it on, your documents. The app cannot see any other files in your Drive.</li></ul>
+<p>Backups travel encrypted (HTTPS) directly between your device and Google and are stored in your Google account. The developer has no access to them. The sign-in token is stored only on your device (Android: Google Play services, Windows: Credential Manager).</p>
+<div class="box"><p>MicroAxis's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. The data is not used for advertising, not sold and not shared with third parties.</p></div>
+<h2>MicroAxis Pro purchase</h2>
+<p>Payments are processed by Google Play or the Microsoft Store. The app only learns whether the purchase is valid and never sees payment details.</p>
+<h2>Deleting your data</h2>
+<ul><li>In the app: <span class="cesta">Settings › About › Delete everything and start over</span>.</li>
+<li>Sign out and remove access: <span class="cesta">Settings › Account and Pro › Sign out</span>, or <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+<li>Backups on Google Drive: <span class="cesta">drive.google.com › Settings › Manage apps › MicroAxis › Delete hidden app data</span>.</li></ul>
+<h2>Contact</h2>
+<p>Controller: Jiří Sloboda. Privacy questions: <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a>.</p>
+</div>
+</div></main>
+<footer><div class="w">
+  <img src="microaxis-napis.svg" alt="MicroAxis">
+  <span>Jiří Sloboda · <a href="mailto:microaxisguide@gmail.com">microaxisguide@gmail.com</a></span>
+  <a href="index.html">microaxis.github.io</a>
+  <a href="privacy.html"><span lang="cs">Ochrana osobních údajů</span><span lang="en">Privacy</span></a>
+  <a href="terms.html"><span lang="cs">Podmínky</span><span lang="en">Terms</span></a>
+</div></footer>
+<script>
+(()=>{ const H=document.documentElement;
+let jaz='cs'; try{ jaz=localStorage.getItem('jaz')||((navigator.language||'').toLowerCase().match(/^(cs|sk)/)?'cs':'en'); }catch(e){}
+function nastav(l){ H.lang=l; document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l)); try{ localStorage.setItem('jaz',l); }catch(e){} }
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-l]'); if(b) nastav(b.dataset.l); });
+const q=new URLSearchParams(location.search).get('lang'); nastav(q==='en'||q==='cs'?q:jaz);
+})();
+</script>
+</body>
+</html>
