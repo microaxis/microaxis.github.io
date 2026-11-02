@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MicroAxis · dílenské výpočty a PathCheck</title>
-<meta name="description" content="MicroAxis: dílenské výpočty pro CNC obrábění a PathCheck, kontrola NC programů Heidenhain. Android a Windows. · Shop-floor calculations for CNC machining and PathCheck, Heidenhain NC program checking.">
-<meta property="og:title" content="MicroAxis · dílenské výpočty a PathCheck">
-<meta property="og:description" content="Výkon, otáčky, závity, tolerance, materiály a kontrola NC programů. Android a Windows.">
+<title>MicroAxis · shop-floor calculations and PathCheck</title>
+<meta name="description" content="MicroAxis: shop-floor calculations for CNC machining and PathCheck, Heidenhain NC program checking. Android and Windows. · Dílenské výpočty pro CNC obrábění a kontrola NC programů Heidenhain.">
+<meta property="og:title" content="MicroAxis · shop-floor calculations and PathCheck">
+<meta property="og:description" content="Spindle power, speeds, threads, tolerances, materials and NC program checking. Android and Windows.">
 <meta property="og:image" content="https://microaxis.github.io/img/og.png">
 <link rel="icon" href="logo.png">
 <style>
@@ -97,7 +97,8 @@ h2{font-size:38px;line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
 .dl-box p{color:#DBEAFE;margin:0 0 24px;font-size:17px}
 .dl-box .btn{background:#fff;color:var(--ink)}
 .qr{background:#fff;border-radius:16px;padding:14px;text-align:center;color:var(--ink);font-size:13px;font-weight:600}
-.qr img{display:block;width:150px;height:150px;margin-bottom:8px}
+.qr img{display:block;width:150px;height:150px;margin:0 auto 8px}
+.qr{justify-self:center;width:max-content}
 footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:14px;color:var(--muted)}
 footer .w{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
 footer img{height:22px}
@@ -107,11 +108,13 @@ footer img{height:22px}
   .cards{grid-template-columns:repeat(2,1fr)}
   .mock{min-height:0;margin:0 20px 30px 0}
   .dl-box{grid-template-columns:1fr;padding:32px 26px}
+  .qr{justify-self:start}
   .top nav{display:none}
   .jaz{margin-left:auto}
 }
 @media (max-width:560px){
   .cards{grid-template-columns:1fr}
+  .qr{display:none}   /* v telefonu QR nemá smysl, už jsi na něm */
   .pcmini{grid-template-columns:1fr}
   .gal,.gal.tel{grid-template-columns:1fr 1fr;gap:12px}
   .gal figcaption{font-size:12.5px}
@@ -197,7 +200,7 @@ footer img{height:22px}
       </ul>
       <span class="pro" lang="cs">Součást MicroAxis Pro</span><span class="pro" lang="en">Part of MicroAxis Pro</span>
     </div>
-    <div class="pcimg"><img src="img/pathcheck-anim.webp" alt="PathCheck: simulace úběru oběžného kola / impeller material removal" width="960" height="540"></div>
+    <div class="pcimg"><img src="img/pathcheck-anim.webp" alt="PathCheck: simulace úběru oběžného kola / impeller material removal" width="960" height="588"></div>
   </div>
   <div class="pcmini">
     <figure data-g="pc" data-v="pathcheck-varovani"><img lang="cs" src="img/pc-pathcheck-varovani-cs.webp" alt="" loading="lazy" width="1600" height="900"><img lang="en" src="img/pc-pathcheck-varovani-en.webp" alt="" loading="lazy" width="1600" height="900"><figcaption lang="cs">Rychloposuv do materiálu: nástroj svítí červeně, seznam varování vpravo</figcaption><figcaption lang="en">Rapid into material: the tool lights up red, warnings on the right</figcaption></figure>
@@ -245,13 +248,14 @@ footer img{height:22px}
 <script>
 (()=>{
 const H=document.documentElement;
-let jaz='cs'; try{ jaz=localStorage.getItem('jaz')||((navigator.language||'').toLowerCase().startsWith('cs')||(navigator.language||'').toLowerCase().startsWith('sk')?'cs':'en'); }catch(e){}
-function nastavJaz(l){ jaz=l; H.lang=l; document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l)); try{ localStorage.setItem('jaz',l); }catch(e){} kresli(); }
-const P={pc:[['pathcheck-prehled','PathCheck: úběr materiálu, výkon vřetena a čas cyklu','PathCheck: material removal, spindle power and cycle time'],
+let jaz='en'; try{ jaz=localStorage.getItem('jaz')||'en'; }catch(e){}   // výchozí angličtina, čeština přepínačem (volba se pamatuje)
+function nastavJaz(l){ jaz=l; H.lang=l; document.title=l==='cs'?'MicroAxis · dílenské výpočty a PathCheck':'MicroAxis · shop-floor calculations and PathCheck'; document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l)); try{ localStorage.setItem('jaz',l); }catch(e){} kresli(); }
+const P={pc:[['pathcheck-prehled','PathCheck: 5osá simulace oběžného kola, výkon vřetena na časové ose','PathCheck: 5-axis impeller simulation, spindle power on the timeline'],
   ['pathcheck-varovani','PathCheck: varování a rychloposuv do materiálu','PathCheck: warnings and a rapid into material'],
   ['pathcheck-mereni','PathCheck: měření z programu','PathCheck: measuring from the program'],
   ['pathcheck-nastroje','PathCheck: nástroje programu s časy a výkonem','PathCheck: program tools with times and power'],
   ['pathcheck-kontroly','PathCheck: nastavení kontrol kolizí','PathCheck: collision check settings'],
+  ['pathcheck-zavit','PathCheck: díry po závitování se symbolickými závity','PathCheck: tapped holes with symbolic threads'],
   ['power','Výkon, moment a síly na vřetenu, průběh síly za otáčku','Spindle power, torque and forces, force trace per revolution'],
   ['fit','ISO 286: uložení, úchylky a vůle','ISO 286 fits, deviations and clearance'],
   ['krit','Kritická hloubka řezu a stabilní kapsy','Critical depth of cut and stability lobes'],
